@@ -12,6 +12,8 @@ class  Category(models.Model):
 
 class shopping_cpu(models.Model):
 
+
+    category=models.TextField(max_length=100,default=None)
     item_title = models.CharField(verbose_name='我',max_length=20)
     item_description=models.TextField(max_length=100)
     content = models.TextField(blank=True)
