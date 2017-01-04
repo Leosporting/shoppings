@@ -9,6 +9,20 @@ class  Category(models.Model):
         return self.name
 
 
+class item(models.Model):
+    category = models.TextField(max_length=100, default=None)
+    item_name = models.CharField(verbose_name='商品名稱', max_length=20)
+    item_description = models.TextField(verbose_name='商品描述',max_length=100)
+    item_price = models.PositiveIntegerField(verbose_name='商品價格',default=0)
+    created_time = models.DateTimeField(auto_now_add=True)
+    update_time = models.DateTimeField(auto_now=True)
+
+class member(models.Model):
+    member_name=models.CharField(max_length=20)
+    member_account = models.CharField(max_length=8,blank=True)
+    member_phone=models.PositiveIntegerField(blank=True,default=None)
+
+
 
 class shopping_cpu(models.Model):
 
@@ -23,10 +37,7 @@ class shopping_cpu(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     update_time=models.DateTimeField(auto_now=True)
 
-class member(models.Model):
-    member_name=models.CharField(max_length=20)
-    member_account = models.CharField(max_length=8,blank=True)
-    member_phone=models.PositiveIntegerField(blank=True,default=None)
+
 
 #class item_information(models.Model):
 
