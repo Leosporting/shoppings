@@ -26,6 +26,7 @@
  
     </div>
     </div>
+
      {% for pc in pc_shoppings_list %} 
   <div class="panel panel-default"> 
  
@@ -33,16 +34,16 @@
  
       <h3 class="panel-title"> 
  
-        <a href="{% url 'pc_detail' pk=book.pk %}">           {{ book.name}} | {% if book.author %} ֢ᘏ: {{ book.author }} {% endif %}         </a> 
+      pc
  
       </h3> 
  
     </div> 
  
-    <div class="panel-body">       <a href="{% url 'book_detail' pk=book.pk %}">       {{ book.description|truncatechars:50 }}       </a>     </div> 
  
-    <div class="panel-footer">       {{ book.publisher}}, {{ book.price}}, {{ book.isbn}}     </div> 
- 
-  </div> <!-- end of panel---> 
- 
+  </div>
+
 {% endfor %}
+
+
+  </div> <!-- end of panel---> 

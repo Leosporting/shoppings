@@ -14,8 +14,8 @@ def  test_pc_shoppings(request):
 def pc_shoppings_list_view(request, category=None):
     pc_shoppings_list_queryset =item.objects.all()
     if category:
-        pc_shoppings_list_queryset = pc_shoppings_list_queryset.filter(category__name=category )
-    return render("shoppings/pc_shoppings_list.html",{'pc_shoppings_list': pc_shoppings_list_queryset,'categories': Category.objects.all() })
+        pc_shoppings_list_queryset = pc_shoppings_list_queryset.filter(category=category)
+    return render("shoppings/pc_shoppings_list.html",{'pc_shoppings_list': pc_shoppings_list_queryset,'category': Category.objects.all() })
 
 
 
