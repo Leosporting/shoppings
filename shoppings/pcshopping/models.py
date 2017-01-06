@@ -24,20 +24,6 @@ class member(models.Model):
 
 
 
-class shopping_cpu(models.Model):
-
-
-    category=models.TextField(max_length=100,default=None)
-    item_title = models.CharField(verbose_name='商品',max_length=20)
-    item_description=models.TextField(max_length=100)
-    content = models.TextField(blank=True)
-    item_photo = models.URLField(blank=True)
-    item_price=models.PositiveIntegerField(default=0)#if price =0   alert
-    item_location = models.CharField(max_length=100)
-    created_time = models.DateTimeField(auto_now_add=True)
-    update_time=models.DateTimeField(auto_now=True)
-
-
 
 #class item_information(models.Model):
 

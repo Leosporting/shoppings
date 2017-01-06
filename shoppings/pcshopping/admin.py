@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 
-from .models import shopping_cpu,member
+from .models import item,member
 
 admin.site.register(member)
-admin.site.register(shopping_cpu)
+admin.site.register(item)
 # Register your models here.
