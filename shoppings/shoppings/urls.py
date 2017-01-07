@@ -14,14 +14,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from pcshopping.views  import test_pc_shoppings
-from pcshopping import  views
+
+from pcshoppings import  views
 
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'pc_shoppings/$', test_pc_shoppings),
+    url(r'pc_shoppings1/$', views.pc_shoppings_list_view),
     url(r'^$', views.pc_shoppings_list_view, name='home'),
-    url(r'^pc_shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,  name = 'pc_shoppings_list'),
+    url(r'pc_shoppings/$', views.test_pc_shoppings),
+    #url(r'^pc_shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,  name = 'pc_shoppings_list'),
 ]

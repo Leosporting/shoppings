@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print (BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pcshopping',
+    'pcshoppings',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,7 +69,7 @@ TEMPLATES = [
         },
     },
 ]
-
+print (TEMPLATES[0]['DIRS'] )
 WSGI_APPLICATION = 'shoppings.wsgi.application'
 
 
