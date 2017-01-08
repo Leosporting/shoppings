@@ -3,14 +3,15 @@ from  django.apps  import AppConfig
 
 
 class  Category(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
 
+
 class item(models.Model):
-    category=Category()
+    category = models.ForeignKey(Category, verbose_name='商品分類', null=True, blank=True)
     #category = models.TextField(max_length=100, default=None)
     item_name = models.CharField(verbose_name='商品名稱', max_length=20)
     item_description = models.TextField(verbose_name='商品描述',max_length=100)

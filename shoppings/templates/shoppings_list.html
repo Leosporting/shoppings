@@ -14,30 +14,29 @@ rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="a
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 crossorigin="anonymous"></script>
 </head>
-    <div class="container">
+
+
+<div class="container">
 <div class="row">
 <div class="col-xs-3">
 <!-- category list -->
-<ul class="list-group">
+
+    <ul class="list-group">
 {% for category in categories %}
 <li class="list-group-item">
-
+<a href="{% url 'pc_shoppings_list'  category=category.name %}">
 {{ category.name }}
-
+</a>
 </li>
 {% endfor %}
-
 </ul>
+
+
+
+
 </div>
 </div>
-
-        {% if   error_message %}
-        ERROR_message : {{error_message}}
-     {% endif %}
-
-
-
-         {% for pc in pc_shoppings_list %} 
+    {% for pc in pc_shoppings_list %} 
 <div class="panel panel-default">
 <div class="panel-heading">
 <h3 class="panel-title">
@@ -52,39 +51,11 @@ crossorigin="anonymous"></script>
 
 </div>
 <div class="panel-footer">
-     商品價格 :{{ pc.item_price}}
+ 商品價格 :{{ pc.item_price}}
     <br>商品上傳時間  :  {{ pc.created_time  }}
     <br>商品更新時間    :  {{ pc.update_time  }}
 </div>
 </div> <!-- end of panel--->
 {% endfor %}
 
-
-
-
-
-
-<br>
-     {% for pc in pc_shoppings_list %} 
-  <div class="panel panel-default"> 
- 
-    <div class="panel-heading"> 
- 
-      <h3 class="panel-title"> 
-           商品種類        :  {{ pc.category}}  <br>
-            商品名稱        :  {{ pc.item_name }}  <br>
-           商品描述        :  {{ pc.item_description  }}  <br>
-           商品價格        :  {{ pc.item_price  }}  <br>
-           商品上傳時間    : } {{ pc.created_time  }  <br>
-           商品更新時間    :  {{ pc.update_time  }}  <br>
-      </h3> 
- 
-    </div> 
- 
- 
-  </div>
-
-{% endfor %}
-
-
-  </div> <!-- end of panel---> 
+   </div>
