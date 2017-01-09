@@ -22,8 +22,8 @@ from pcshoppings import  views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', views.home),
-    #url(r'shoppings/(?P<category>.*)$', views.Item_list_view),
-    url(r'shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,name='pc_shoppings_list'),
+    url(r'shoppings/', views.item_list_view,name='pc_shoppings_list1'),
+    #url(r'shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,name='pc_shoppings_list'),
     url(r'^$', views.pc_shoppings_list_view, name='home'),
     #url(r'pc_shoppings/(?P<category>.*)$', views.test_pc_shoppings),
     #url(r'^pc_shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,  name = 'pc_shoppings_list'),

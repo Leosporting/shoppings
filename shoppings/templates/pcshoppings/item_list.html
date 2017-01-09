@@ -1,0 +1,64 @@
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/
+bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/
+K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstraptheme.
+min.css" integrity="sha384-
+rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+</head>
+{{ object_list }}
+<br>
+gogoro
+{% url 'pc_shoppings_list1'   %}
+gogo123
+<div class="container">
+<div class="row">
+<div class="col-xs-3">
+<!-- category list -->
+
+    <ul class="list-group">
+{% for category in  categories %}
+<li class="list-group-item">
+<a href="{% url 'pc_shoppings_list'  category=category.name %}">
+{{ category.name }}
+</a>
+</li>
+{% endfor %}
+</ul>
+
+
+
+
+</div>
+</div>
+    {% for pc in pc_shoppings_list %} 
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">
+
+{{ pc.item_name}}
+
+</h3>
+</div>
+<div class="panel-body">
+
+商品描述 :{{ pc.item_description|truncatechars:50 }}
+
+</div>
+<div class="panel-footer">
+ 商品價格 :{{ pc.item_price}}
+    <br>商品上傳時間  :  {{ pc.created_time  }}
+    <br>商品更新時間    :  {{ pc.update_time  }}
+</div>
+</div> <!-- end of panel--->
+{% endfor %}
+
+   </div>

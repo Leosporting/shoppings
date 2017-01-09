@@ -9,19 +9,23 @@ import copy
 
 class Item_list_view(ListView):
     model=item
-    paginate_by = 3
 
-    def categories(self):
-        return Category.objects.all()
 
-    def get_queryset(self):
-        query_set = super(Item_list_view, self).get_queryset()
 
-        category = self.kwargs.get('category')
+    #def categories(self):
+        #return Category.objects.all()
 
-        if category:
-            query_set = query_set.filter(category=category)
-        return query_set
+    #def get_queryset(self):
+        #query_set = super(Item_list_view, self).get_queryset()
+        #self.kwargs=kwargs
+        #self.kwargs.get('category')
+        #category = self.kwargs.get('category')
+        #category=1
+
+        #if category:
+           # query_set = query_set.filter(category=category)
+       # return query_set
+
 
 item_list_view=Item_list_view.as_view()
 
