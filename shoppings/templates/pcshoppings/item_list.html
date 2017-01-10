@@ -14,10 +14,14 @@ rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="a
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 crossorigin="anonymous"></script>
 </head>
-{{ object_list }}
+all items :{{ object_list }}
 <br>
 gogoro
-{% url 'pc_shoppings_list1'   %}
+<br>
+<a href="{% url 'pc123'  category %}">
+{% url 'pc123'  category %}
+    </a>
+<br>
 gogo123
 <div class="container">
 <div class="row">
@@ -25,9 +29,10 @@ gogo123
 <!-- category list -->
 
     <ul class="list-group">
+
 {% for category in  categories %}
 <li class="list-group-item">
-<a href="{% url 'pc_shoppings_list'  category=category.name %}">
+<a href="{% url 'pc123'  category=category.name %}">
 {{ category.name }}
 </a>
 </li>
@@ -39,7 +44,7 @@ gogo123
 
 </div>
 </div>
-    {% for pc in pc_shoppings_list %} 
+    {% for pc in object_list %} 
 <div class="panel panel-default">
 <div class="panel-heading">
 <h3 class="panel-title">

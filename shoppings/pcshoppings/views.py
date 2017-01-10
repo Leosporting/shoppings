@@ -7,13 +7,22 @@ import copy
 
 
 
+
+
+def  home(request):
+    return  render(request,'index.html')
+
+
+
+
+
+
+
 class Item_list_view(ListView):
     model=item
 
-
-
-    #def categories(self):
-        #return Category.objects.all()
+    def categories(self):
+        return Category.objects.all()
 
     #def get_queryset(self):
         #query_set = super(Item_list_view, self).get_queryset()
@@ -31,9 +40,13 @@ item_list_view=Item_list_view.as_view()
 
 
 
+class ItemDetail(DetailView):
+    model = item
+#item   是代表  返回的值
+item_detail_view = ItemDetail.as_view()
 
-def  home(request):
-    return  render(request,'index.html')
+
+
 
 
 def  test_pc_shoppings(request):
@@ -61,7 +74,7 @@ def pc_shoppings_list_view(request,category=None):
                 pc_shoppings_list_queryset = pc_shoppings_list_queryset.filter(category=category_id)
             else:
                 error_message=('ERROR!!   category:{0}  does not  exist!! \n it must be in {1} '.format(category,all_category))
-                return render(request, "shoppings_list.html",
+                return render(request, "error.html",
                               { 'error_message': error_message})
 
 

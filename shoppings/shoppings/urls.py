@@ -22,9 +22,10 @@ from pcshoppings import  views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', views.home),
-    url(r'shoppings/', views.item_list_view,name='pc_shoppings_list1'),
-    #url(r'shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,name='pc_shoppings_list'),
+    url(r'pcshoppings/(?P<category>.*)$', views.item_list_view,name='pc123'),
+    url(r'shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,name='test123'),
     url(r'^$', views.pc_shoppings_list_view, name='home'),
+    url(r'^pc-shopping/(?P<pk>\d+)$', views.item_detail_view, name='item_detail'),
     #url(r'pc_shoppings/(?P<category>.*)$', views.test_pc_shoppings),
     #url(r'^pc_shoppings/(?P<category>.*)$', views.pc_shoppings_list_view,  name = 'pc_shoppings_list'),
 ]

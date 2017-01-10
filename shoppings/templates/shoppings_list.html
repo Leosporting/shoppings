@@ -20,11 +20,19 @@ crossorigin="anonymous"></script>
 <div class="row">
 <div class="col-xs-3">
 <!-- category list -->
+ all items :   {{ pc_shoppings_list }}
+    <br>
+{% url 'test123' category=category111.name   %}
 
+
+    <br>
+    55555
     <ul class="list-group">
+
 {% for category in categories %}
+
 <li class="list-group-item">
-<a href="{% url 'pc_shoppings_list'  category=category.name %}">
+<a href="{% url 'test123'  category=category.name %}">
 {{ category.name }}
 </a>
 </li>
