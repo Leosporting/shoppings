@@ -1,1 +1,1 @@
-web: gunicorn django_shopping.wsgi --pythonpath django_shopping
+web: gunicorn shoppings.wsgi --pythonpath shoppings
