@@ -1,6 +1,25 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+<script id="ret-js-template" type="text/javascript">
+
+        var retUrlPrefix="http://icem.retchat.com/tracking/";
+        var retCert="d8246d2969fc6e0a094569a1591ff536";
+        var retSiteId=85;
+
+    (function() {
+            var ret = document.createElement('script');
+            ret.type = 'text/javascript';
+            ret.async = true;
+            ret.src = retUrlPrefix + 'ret.js?' + (new Date().getTime());
+            var currentJs = document.getElementById('ret-js-template');
+            currentJs.parentNode.insertBefore(ret, currentJs);
+
+    })();
+</script>
 <head>
+
     <meta charset="UTF-8">
     Item detail:
     <br>
@@ -15,3 +34,4 @@
 
 </body>
 </html>
+
